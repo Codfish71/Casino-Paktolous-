@@ -3,6 +3,8 @@ import { Nav, Navbar, NavItem, Header, Brand } from 'react-bootstrap'
 import { Link } from 'react-router'
 import { LinkContainer } from 'react-router-bootstrap'
 import AuthService from 'utils/AuthService'
+import Wheel from './Wheel';
+import './styles.module.css';
 
 const auth = new AuthService()
 
@@ -10,6 +12,10 @@ export class Container extends React.Component {
   static contextTypes = {
     router: T.object
   }
+  constructor() {
+        super();
+        this.places = [1,2,3,4,5,6,7];
+          }
 
   logout(){
     auth.logout()
@@ -60,7 +66,10 @@ export class Container extends React.Component {
         </Navbar>
         <div className="container">
           { children }
+          <h1>What should you Play today?</h1>
+          <Wheel items={this.places} />
         </div>
+
       </div>
     )
   }

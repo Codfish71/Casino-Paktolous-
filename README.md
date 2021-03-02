@@ -1,4 +1,4 @@
-# React Authentication for Front End Masters
+# React Application for casino
 
 ## Running the App
 
